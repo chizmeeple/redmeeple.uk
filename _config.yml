@@ -4,7 +4,7 @@ destination: _site
 
 title: redmeeple.uk
 description: >-
-  chizmeeple — board games, community, and a little bit of mischief.
+  redmeeple — board games, community, and a little bit of mischief.
 url: https://redmeeple.uk
 locale: en_GB
 # With a custom domain (redmeeple.uk) the site is served at the root,

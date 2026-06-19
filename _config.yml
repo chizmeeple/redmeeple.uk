@@ -9,10 +9,10 @@ url: https://redmeeple.uk
 locale: en_GB
 # With a custom domain (redmeeple.uk) the site is served at the root,
 # so baseurl must be "".
-# If you remove the custom domain, set baseurl: "/site-redmeeple.uk"
-# so chizmeeple.github.io/site-redmeeple.uk/ works.
+# If you remove the custom domain, set baseurl: "/redmeeple.uk"
+# so chizmeeple.github.io/redmeeple.uk/ works.
 baseurl: ''
-repository: chizmeeple/site-redmeeple.uk
+repository: chizmeeple/redmeeple.uk
 og_image: /assets/chizmeeple-250x250.png
 
 plugins:

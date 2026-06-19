@@ -1,0 +1,8 @@
+<footer class="site-footer">
+  <p>&copy; {{ site.time | date: "%Y" }} chizmeeple</p>
+  {% if site.repository %}
+  <p class="footer-links">
+    <a href="https://github.com/{{ site.repository }}">GitHub</a>
+  </p>
+  {% endif %}
+</footer>

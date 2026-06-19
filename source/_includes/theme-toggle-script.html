@@ -1,0 +1,50 @@
+<script>
+(function() {
+  function setNavThemeIcon(btn, iconId) {
+    var slot = btn.querySelector('.nav-theme-icon-slot');
+    if (!slot) return;
+    slot.innerHTML = '<span class="iconify" data-icon="' + iconId + '" aria-hidden="true"></span>';
+    if (window.Iconify && Iconify.scan) Iconify.scan(slot);
+  }
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    document.dispatchEvent(new CustomEvent('themechange', { detail: { theme: theme } }));
+    var btns = document.querySelectorAll('.nav-theme-toggle');
+    btns.forEach(function(btn) {
+      if (theme === 'dark') {
+        btn.setAttribute('aria-label', 'Switch to light theme');
+        btn.setAttribute('title', 'Switch to light theme');
+        setNavThemeIcon(btn, 'lucide:moon');
+      } else {
+        btn.setAttribute('aria-label', 'Switch to dark theme');
+        btn.setAttribute('title', 'Switch to dark theme');
+        setNavThemeIcon(btn, 'lucide:sun');
+      }
+    });
+  }
+  function initThemeToggle() {
+    var btns = document.querySelectorAll('.nav-theme-toggle');
+    if (!btns.length) return;
+    var theme = document.documentElement.getAttribute('data-theme') || 'dark';
+    if (theme === 'light') {
+      btns.forEach(function(btn) {
+        setNavThemeIcon(btn, 'lucide:sun');
+        btn.setAttribute('aria-label', 'Switch to dark theme');
+        btn.setAttribute('title', 'Switch to dark theme');
+      });
+    }
+    btns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        applyTheme(next);
+      });
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initThemeToggle);
+  } else {
+    initThemeToggle();
+  }
+})();
+</script>

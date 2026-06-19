@@ -1,0 +1,30 @@
+---
+source: source
+destination: _site
+
+title: redmeeple.uk
+description: >-
+  chizmeeple — board games, community, and a little bit of mischief.
+url: https://redmeeple.uk
+locale: en_GB
+# With a custom domain (redmeeple.uk) the site is served at the root,
+# so baseurl must be "".
+# If you remove the custom domain, set baseurl: "/site-redmeeple.uk"
+# so chizmeeple.github.io/site-redmeeple.uk/ works.
+baseurl: ''
+repository: chizmeeple/site-redmeeple.uk
+og_image: /assets/chizmeeple-250x250.png
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-target-blank
+  - jekyll-relative-links
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - node_modules
+  - script

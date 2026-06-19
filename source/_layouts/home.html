@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  {% include head.html %}
+</head>
+<body>
+  {% include nav.html %}
+  {% include nav-menu-overlay.html %}
+  <main class="page-content">
+    <section class="home-hero">
+      <div class="home-hero__logo-wrap">
+        <img
+          src="{{ '/assets/chizmeeple-250x250.png' | relative_url }}"
+          alt="chizmeeple logo"
+          class="home-hero__logo"
+          width="220"
+          height="220"
+        />
+      </div>
+      <h1 class="home-hero__title">chiz<span>meeple</span></h1>
+      {% if page.description %}
+      <p class="home-hero__tagline">{{ page.description }}</p>
+      {% endif %}
+    </section>
+  </main>
+  {% include footer.html %}
+  {% include iconify-script.html %}
+  {% include theme-toggle-script.html %}
+  {% include nav-menu-script.html %}
+</body>
+</html>
